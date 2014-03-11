@@ -1,0 +1,24 @@
+<% content_for :title, "Fun Trucker: The Site For Fun Trucks" %>
+
+<div class="row">
+  <div class="small-6 columns">
+    <p>Here are some trucks that we love!</p>
+    
+    <ol>
+      <% @trucks.each do |truck| %>
+        <li><%= link_to truck.name, truck.link %></li>
+      <% end %>
+    </ol>
+  </div>
+  
+  <div class="small-6 columns">
+    <p>Here are some upcoming truck rallies!</p>
+  
+    <ol>
+      <% @rallies.each do |rally| %>
+        <li><%= link_to rally.name, rally.link %></li>
+      <% end %>
+    </ol>
+  </div>
+</div>
+

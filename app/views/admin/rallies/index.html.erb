@@ -1,0 +1,32 @@
+<% content_for :title, "Listing rallies" %>
+
+<%= link_to 'New Rally', new_admin_rally_path, class: "button primary" %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Slug (link to front-end)</th>
+      <th>Start at</th>
+      <th>End at</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rallies.each do |rally| %>
+      <tr>
+        <td><%= rally.name %></td>
+        <td><%= link_to rally.slug, rally.link %></td>
+        <td><%= rally.start_at %></td>
+        <td><%= rally.end_at %></td>
+        <td><%= link_to 'Show', [:admin, rally] %></td>
+        <td><%= link_to 'Edit', edit_admin_rally_path(rally) %></td>
+        <td><%= link_to 'Destroy', [:admin, rally], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

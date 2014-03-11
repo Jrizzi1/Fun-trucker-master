@@ -1,0 +1,10 @@
+
+<% content_for :title, @truck.name %>
+<% content_for :breadcrumb do %>
+  <%= link_to @truck.name, @truck.link %>
+<% end %>
+
+<div>
+  <%== @truck.description %>
+</div>
+
