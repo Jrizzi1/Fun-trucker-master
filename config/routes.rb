@@ -6,6 +6,7 @@ FunTrucker::Application.routes.draw do
   end
 
   get  '*truck_slug' => 'trucks#show'
+  get  '*rallies_slug' => 'rallies#show'
   root "home#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

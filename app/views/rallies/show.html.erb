@@ -1,0 +1,11 @@
+
+<% content_for :title, @rally.name %>
+<% content_for :breadcrumb do %>
+  <%= link_to @rally.name, @rally.link %>
+<% end %>
+
+<div>
+  <%== @rally.start_at %>
+  <%== @rally.end_at %>
+</div>
+
