@@ -1,15 +1,3 @@
-class TrucksConstraint
-  def initialize
-    @trucks = Truck.all
-  end
- 
-  def matches?(request)
-    @trucks.include?(request.truck_slug)
-
-  end
-end
-  
-
 FunTrucker::Application.routes.draw do
   namespace 'admin' do
     resources :trucks
