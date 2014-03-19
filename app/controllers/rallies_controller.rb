@@ -2,7 +2,7 @@ class RalliesController < ApplicationController
   layout 'public'
 
   def show
-    @rally = Rally.where(slug: params[:rally_slug]).first
+    @rally = Rally.where(slug: params[:truck_slug]).first
 
     if @rally.present?
       render :show

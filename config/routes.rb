@@ -1,3 +1,15 @@
+class TrucksConstraint
+  def initialize
+    @trucks = Truck.all
+  end
+ 
+  def matches?(request)
+    @trucks.include?(request.truck_slug)
+
+  end
+end
+  
+
 FunTrucker::Application.routes.draw do
   namespace 'admin' do
     resources :trucks
@@ -5,8 +17,8 @@ FunTrucker::Application.routes.draw do
     root 'trucks#index'
   end
 
-  get  '*truck_slug' => 'trucks#show'
-  get  '*rallies_slug' => 'rallies#show'
+  get "*truck_slug" => "trucks#show"
+  
   root "home#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
